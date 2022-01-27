@@ -5,7 +5,6 @@ import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import 'tailwindcss/tailwind.css';
-import '../styles/swiper-custom.css';
 
 import SEO from '../../next-seo.config';
 import { AlertContext } from '../contexts';
