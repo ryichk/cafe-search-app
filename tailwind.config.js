@@ -10,7 +10,7 @@ module.exports = {
     }),
     extend: {
       colors: {
-        dark: '#0f172a',
+        dark: '#151b22',
       },
     },
   },
@@ -38,7 +38,7 @@ module.exports = {
           'neutral-focus': '#2A2E37',
           'neutral-content': '#FFFFFF',
 
-          'base-100': '#FAFAF9',
+          'base-100': '#EAFAF9',
           'base-200': '#F9FAFB',
           'base-300': '#D1D5DB',
           'base-content': '#3D405B',
