@@ -1,10 +1,10 @@
-# Cafe Shares
+# Cafe Search
 
 This is a cafe search web application that uses the [API of Hotpepper gourmet](https://webservice.recruit.co.jp/doc/hotpepper/).
 
 This project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Cafe Shares
+Cafe Search
 
 ## Getting Started
 
@@ -32,11 +32,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on AWS Amplify
-
-[Deploy and host a hybrid app (SSG and SSR)](https://docs.amplify.aws/guides/hosting/nextjs/q/platform/js/#deploy-and-host-a-hybrid-app-ssg-and-ssr)
-
-## AWS Architecture
-
-<img width="1132" alt="cafe-shares-aws-architecture" src="https://user-images.githubusercontent.com/26560390/138563377-9a99472a-d043-4c18-9d28-6b4364483105.png">
