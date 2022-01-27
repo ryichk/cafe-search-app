@@ -21,14 +21,10 @@ export const Header: VFC = () => {
     <>
       <header className='fixed bg-base-100 shadow-md pb-3 w-full z-40 dark:bg-dark dark:shadow-gray-800'>
         <div className='flex relative sm:mx-auto pt-8 pl-4 pb-5'>
-          <div className='w-48'>
+          <div className='w-48 text-center'>
             <Link href='/'>
               <a>
-                {theme === 'light' ? (
-                  <Image src={cafeSharesImg} alt='Cafe Shares' />
-                ) : (
-                  <Image src={cafeSharesImgForDarkMode} alt='Cafe Shares' />
-                )}
+                <span className='text-2xl font-bold'>Cafe Search</span>
               </a>
             </Link>
           </div>
@@ -77,23 +73,7 @@ export const Header: VFC = () => {
                 <Link href='/'>
                   <a>
                     <HomeIcon classes='h-5 sm:h-7 mr-1' />
-                    CAFES
-                  </a>
-                </Link>
-              </li>
-              <li className={router.pathname === '/posts' ? 'text-primary' : ''}>
-                <Link href='/posts'>
-                  <a>
-                    <PhotoIcon classes='h-5 sm:h-7 mr-1' />
-                    POSTS
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href='/'>
-                  <a>
-                    <LocationIcon classes='h-5 sm:h-7 mr-1' />
-                    PLACES
+                    HOME
                   </a>
                 </Link>
               </li>

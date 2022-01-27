@@ -4,16 +4,16 @@ services:
   client:
     build: .
     volumes:
-      - .:/web-front
+      - .:/app
     command: yarn dev
     ports:
       - 8000:3000
-    container_name: cafe-shares-web-front
+    container_name: cafe-search-app
   storybook:
     build: .
     volumes:
-      - .:/web-front
+      - .:/app
     command: yarn storybook
     ports:
       - 6006:6006
-    container_name: cafe-shares-storybook
+    container_name: cafe-search-storybook

@@ -1,8 +1,8 @@
 export default {
-  defaultTitle: 'Cafe Shares',
-  titleTemplate: '%s | Cafe Shares',
+  defaultTitle: 'Cafe Search',
+  titleTemplate: '%s | Cafe Search',
   description: '日本全国のカフェを検索して探せます',
-  canonical: 'https://cafe-shares.com',
+  canonical: 'https://cafe-search.netlify.app',
   twitter: {
     handle: '@ryichk_dev',
     site: '@ryichk_dev',
@@ -14,17 +14,17 @@ export default {
   openGraph: {
     images: [
       {
-        url: 'https://cafe-shares.com/cafe-shares.png',
+        url: 'https://cafe-search/cafe.png',
         width: 1280,
         height: 640,
-        alt: 'Cafe Shares',
+        alt: 'Cafe Search',
       },
     ],
-    url: 'https://cafe-shares.com',
+    url: 'https://cafe-search.com',
     type: 'website',
-    title: 'Cafe Shares',
+    title: 'Cafe Search',
     description: '日本全国のカフェを検索して探せます',
-    site_name: 'Cafe Shares',
+    site_name: 'Cafe Search',
     locale: 'ja',
   },
 };
