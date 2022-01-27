@@ -4,7 +4,6 @@ export { CardList } from './CardList';
 export { ErrorAlert } from './Alerts/ErrorAlert';
 export { Map } from './Map';
 export { InfoAlert } from './Alerts/InfoAlert';
-export { PostCard } from './PostCard';
 export { SearchModal } from './SearchModal';
 export { ScrollToTop } from './ScrollToTop';
 export { SuccessAlert } from './Alerts/SuccessAlert';

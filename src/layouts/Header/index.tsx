@@ -1,63 +1,30 @@
-import { Auth } from 'aws-amplify';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useState, VFC } from 'react';
+import { useEffect, useState, VFC } from 'react';
 import { useTheme } from 'next-themes';
 
 import cafeSharesImg from '../../assets/images/cafe-shares.png';
 import cafeSharesImgForDarkMode from '../../assets/images/cafe-shares-for-dark.png';
-import {
-  BellIcon,
-  CogIcon,
-  HomeIcon,
-  LocationIcon,
-  MoonIcon,
-  PhotoIcon,
-  SignInIcon,
-  SignOutIcon,
-  SunIcon,
-  UserIcon,
-} from '../../icons';
-import { ErrorAlert, SearchModal } from '../../components';
-import { AuthContext } from '../../contexts/AuthContext';
+import { HomeIcon, LocationIcon, MoonIcon, PhotoIcon, SunIcon } from '../../icons';
+import { SearchModal } from '../../components';
 
 export const Header: VFC = () => {
   const router = useRouter();
-  const { user, setUser } = useContext(AuthContext);
 
-  const [isError, setIsError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
   const [mounted, setMounted] = useState(false);
 
   const { theme, setTheme } = useTheme();
   useEffect(() => setMounted(true), []);
 
-  const signOut = async () => {
-    try {
-      await Auth.signOut();
-      setUser(null);
-      setIsError(false);
-      setErrorMessage('');
-    } catch (error) {
-      setIsError(true);
-      setErrorMessage(`${error}`);
-    }
-  };
-
   return (
     <>
-      {isError ? <ErrorAlert message={errorMessage} /> : <></>}
       <header className='fixed bg-base-100 shadow-md pb-3 w-full z-40 dark:bg-dark dark:shadow-gray-800'>
         <div className='flex relative sm:mx-auto pt-8 pl-4 pb-5'>
-          <div className='w-48'>
+          <div className='w-48 text-center'>
             <Link href='/'>
               <a>
-                {theme === 'light' ? (
-                  <Image src={cafeSharesImg} alt='Cafe Shares' />
-                ) : (
-                  <Image src={cafeSharesImgForDarkMode} alt='Cafe Shares' />
-                )}
+                <span className='text-2xl font-bold'>Cafe Search</span>
               </a>
             </Link>
           </div>
@@ -102,79 +69,14 @@ export const Header: VFC = () => {
                   </label>
                 </div>
               </li>
-              {user ? (
-                <>
-                  <li className={router.pathname === '/auth/user-profile' ? 'text-primary' : ''}>
-                    <Link href='/auth/user-profile'>
-                      <a>
-                        <UserIcon classes='h-5 sm:h-7 mr-1' />
-                        PROFILE
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='/'>
-                      <a>
-                        <BellIcon classes='h-5 sm:h-7 mr-1' />
-                        NOTIFICATIONS
-                      </a>
-                    </Link>
-                  </li>
-                </>
-              ) : (
-                <li className={router.pathname === '/auth/sign-in' ? 'text-primary' : ''}>
-                  <Link href='/auth/sign-in'>
-                    <a>
-                      <SignInIcon classes='h-5 sm:h-7 mr-1' />
-                      SIGN IN
-                    </a>
-                  </Link>
-                </li>
-              )}
               <li className={router.pathname === '/' ? 'text-primary' : ''}>
                 <Link href='/'>
                   <a>
                     <HomeIcon classes='h-5 sm:h-7 mr-1' />
-                    CAFES
+                    HOME
                   </a>
                 </Link>
               </li>
-              <li className={router.pathname === '/posts' ? 'text-primary' : ''}>
-                <Link href='/posts'>
-                  <a>
-                    <PhotoIcon classes='h-5 sm:h-7 mr-1' />
-                    POSTS
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href='/'>
-                  <a>
-                    <LocationIcon classes='h-5 sm:h-7 mr-1' />
-                    PLACES
-                  </a>
-                </Link>
-              </li>
-              {user ? (
-                <>
-                  <li>
-                    <Link href='/'>
-                      <a>
-                        <CogIcon classes='h-5 sm:h-7 mr-1' />
-                        SETTINGS
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <a onClick={signOut}>
-                      <SignOutIcon classes='h-5 sm:h-7 mr-1' />
-                      SIGN OUT
-                    </a>
-                  </li>
-                </>
-              ) : (
-                <></>
-              )}
             </ul>
           </div>
         </div>

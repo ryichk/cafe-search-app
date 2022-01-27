@@ -1,6 +1,6 @@
 FROM node:15.14-alpine
-WORKDIR /web-front
-COPY . /web-front
+WORKDIR /app
+COPY . /app
 
 RUN yarn
 
