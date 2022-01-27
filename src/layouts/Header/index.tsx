@@ -1,12 +1,9 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState, VFC } from 'react';
 import { useTheme } from 'next-themes';
 
-import cafeSharesImg from '../../assets/images/cafe-shares.png';
-import cafeSharesImgForDarkMode from '../../assets/images/cafe-shares-for-dark.png';
-import { HomeIcon, LocationIcon, MoonIcon, PhotoIcon, SunIcon } from '../../icons';
+import { HomeIcon, MoonIcon, SunIcon } from '../../icons';
 import { SearchModal } from '../../components';
 
 export const Header: VFC = () => {
@@ -24,7 +21,7 @@ export const Header: VFC = () => {
           <div className='w-48 text-center'>
             <Link href='/'>
               <a>
-                <span className='text-2xl font-bold'>Cafe Search</span>
+                <span className='text-2xl font-bold dark:text-gray-300'>Cafe Search</span>
               </a>
             </Link>
           </div>
