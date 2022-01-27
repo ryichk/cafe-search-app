@@ -1,9 +1,0 @@
-{
-  "AppSyncApiName": "CafeShares",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthCognitoUserPoolId": {
-    "Fn::GetAtt": ["authcafeshares", "Outputs.UserPoolId"]
-  },
-  "AuthModeLastUpdated": "2021-12-31T12:04:26.754Z"
-}
